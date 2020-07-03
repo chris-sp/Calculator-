@@ -1,0 +1,31 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.WindowsDesktop">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <UseWPF>true</UseWPF>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="Calculations\operandNo\**" />
+    <Compile Remove="Calculations\operandOne\**" />
+    <Compile Remove="Calculations\operandTwo\**" />
+    <EmbeddedResource Remove="Calculations\operandNo\**" />
+    <EmbeddedResource Remove="Calculations\operandOne\**" />
+    <EmbeddedResource Remove="Calculations\operandTwo\**" />
+    <None Remove="Calculations\operandNo\**" />
+    <None Remove="Calculations\operandOne\**" />
+    <None Remove="Calculations\operandTwo\**" />
+    <Page Remove="Calculations\operandNo\**" />
+    <Page Remove="Calculations\operandOne\**" />
+    <Page Remove="Calculations\operandTwo\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Include="Calculations\operandNo\E.cs" />
+    <Compile Include="Calculations\operandNo\PI.cs" />
+    <Compile Include="Calculations\operandTwo\Addition.cs" />
+    <Compile Include="Calculations\operandTwo\Substraction.cs" />
+  </ItemGroup>
+
+</Project>
