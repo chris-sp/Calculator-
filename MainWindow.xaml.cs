@@ -18,7 +18,7 @@ namespace Calculator
 
         private void button0_Click(object sender, RoutedEventArgs e)
         {
-            textDisplay.Text = "0";
+            textDisplay.Text = textDisplay.Text + "0";
             operand = "0";
         }
 
@@ -81,11 +81,10 @@ namespace Calculator
 
             (@operator as ITwoOperandCalculation<decimal>).Operand2 = Decimal.Parse(operand);
             decimal add_value = @operator.Calculate();
+            decimal sub_value = @operator.Calculate();
+            decimal multi_value = @operator.Calculate();
             textDisplay.Text = textDisplay.Text + "=" + add_value.ToString();
-            if (textDisplay.Text == "+")
-            {
-
-            }
+            textDisplay.Text = textDisplay.Text + "=" + sub_value.ToString();
         }
 
         /////////////////////////////////////////////////////////////////////////////////////////
@@ -103,8 +102,8 @@ namespace Calculator
 
         private void buttonSub_Click(object sender, RoutedEventArgs e)
         {
-            @operator = new Addition { Operand1 = Decimal.Parse(operand) }; // convert the string to its equivalent decimal.
-            textDisplay.Text = textDisplay.Text + "+";
+            @operator = new Substraction { Operand1 = Decimal.Parse(operand) }; // convert the string to its equivalent decimal.
+            textDisplay.Text = textDisplay.Text + "-";
         }
 
 
@@ -116,8 +115,27 @@ namespace Calculator
 
         private void buttonE_Click(object sender, RoutedEventArgs e)
         {
-            @operator = new PI { Math.PI };
+            
             textDisplay.Text = "e";
+        }
+
+        private void buttonClear_Click(object sender, RoutedEventArgs e)
+        {
+            textDisplay.Text = "";
+        }
+
+        private void buttonBackspace_Click(object sender, RoutedEventArgs e)
+        {
+            if (operand == "")
+            {
+                textDisplay.Text = textDisplay.Text.Remove( textDisplay.Text.Length - 1);
+                
+            }
+            else if (textDisplay.Text.Length > 0)
+            {
+                textDisplay.Text = textDisplay.Text.Remove(textDisplay.Text.Length - 1);
+            }
+
         }
 
 
@@ -175,8 +193,5 @@ namespace Calculator
                 buttonDisplay.Text = number2.ToString();
             }
         }*/
-
-
-
     }
 }
