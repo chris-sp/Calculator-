@@ -10,16 +10,11 @@ namespace Calculator.Calculations.operandTwo
         protected override string CalculationName => "Power";
 
         public decimal Operand1 { get; set; }
-        public decimal Operand2 { get; set; }
-        public decimal Calculate { get; }
+        public decimal Operand2 { get; set; }        
 
-        public int Powering(double a, double b)
-        {
-            double value = a;
-            double power = b;
-            int pow; 
-            pow = Convert.ToInt32(Math.Pow(value, power));
-            return pow;
+        public decimal Calculate()
+        {            
+            return Convert.ToDecimal(Math.Pow(Convert.ToDouble(Operand1), Convert.ToDouble(Operand2)));
         }        
     }
 }

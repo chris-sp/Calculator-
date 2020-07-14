@@ -10,21 +10,30 @@
     <Compile Remove="Calculations\operandNo\**" />
     <Compile Remove="Calculations\operandOne\**" />
     <Compile Remove="Calculations\operandTwo\**" />
+    <Compile Remove="obj\**" />
     <EmbeddedResource Remove="Calculations\operandNo\**" />
     <EmbeddedResource Remove="Calculations\operandOne\**" />
     <EmbeddedResource Remove="Calculations\operandTwo\**" />
+    <EmbeddedResource Remove="obj\**" />
     <None Remove="Calculations\operandNo\**" />
     <None Remove="Calculations\operandOne\**" />
     <None Remove="Calculations\operandTwo\**" />
+    <None Remove="obj\**" />
     <Page Remove="Calculations\operandNo\**" />
     <Page Remove="Calculations\operandOne\**" />
     <Page Remove="Calculations\operandTwo\**" />
+    <Page Remove="obj\**" />
   </ItemGroup>
 
   <ItemGroup>
     <Compile Include="Calculations\operandNo\E.cs" />
     <Compile Include="Calculations\operandNo\PI.cs" />
+    <Compile Include="Calculations\operandOne\Percentage.cs" />
     <Compile Include="Calculations\operandTwo\Addition.cs" />
+    <Compile Include="Calculations\operandTwo\Div.cs" />
+    <Compile Include="Calculations\operandTwo\Mod.cs" />
+    <Compile Include="Calculations\operandTwo\Multiply.cs" />
+    <Compile Include="Calculations\operandTwo\Power.cs" />
     <Compile Include="Calculations\operandTwo\Substraction.cs" />
   </ItemGroup>
 

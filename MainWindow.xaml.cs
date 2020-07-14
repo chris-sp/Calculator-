@@ -1,11 +1,11 @@
-﻿using Calculator.Calculations.operandNo;
+﻿using Calculator.Calculations.operandOne;
 using Calculator.Calculations.operandTwo;
 using Calculator.Interfaces;
 using System;
 using System.Windows;
 
 namespace Calculator
-{    
+{
     public partial class MainWindow : Window
     {
         string operand = "";
@@ -16,6 +16,8 @@ namespace Calculator
             InitializeComponent();
         }
 
+
+        // NUMBERS //
         private void button0_Click(object sender, RoutedEventArgs e)
         {
             textDisplay.Text = textDisplay.Text + "0";
@@ -76,24 +78,8 @@ namespace Calculator
             operand = "9";
         }
 
-        private void buttonEquals_Click(object sender, RoutedEventArgs e)
-        {
 
-            (@operator as ITwoOperandCalculation<decimal>).Operand2 = Decimal.Parse(operand);
-            decimal add_value = @operator.Calculate();
-            decimal sub_value = @operator.Calculate();
-            decimal multi_value = @operator.Calculate();
-            textDisplay.Text = textDisplay.Text + "=" + add_value.ToString();
-            textDisplay.Text = textDisplay.Text + "=" + sub_value.ToString();
-        }
-
-        /////////////////////////////////////////////////////////////////////////////////////////
-        // THERE IS ALSO THIS WAY TO CONVERT SOMETHING TO DECIMAL BUT WE NEED TO SET IT FIRST  //
-        //                                                                                     //
-        // decimal decimalValue                                                                //
-        // decimalValue = System.Convert.ToDecimal(stringVal)                                  //
-        /////////////////////////////////////////////////////////////////////////////////////////
-
+        // TWO OPERAND MATHS //
         private void buttonAdd_Click(object sender, RoutedEventArgs e)
         {
             @operator = new Addition { Operand1 = Decimal.Parse(operand) }; // convert the string to its equivalent decimal.
@@ -106,8 +92,37 @@ namespace Calculator
             textDisplay.Text = textDisplay.Text + "-";
         }
 
+        private void buttonTimes_Click(object sender, RoutedEventArgs e)
+        {
+            @operator = new Multiply { Operand1 = Decimal.Parse(operand) };
+            textDisplay.Text = textDisplay.Text + "×";
+        }
+
+        private void buttonDiv_Click(object sender, RoutedEventArgs e)
+        {
+            @operator = new Div { Operand1 = Decimal.Parse(operand) };
+            textDisplay.Text = textDisplay.Text + "/";
+        }
+
+        private void buttonPercent_Click(object sender, RoutedEventArgs e)
+        {
+            @operator = new Percentage { Operand = Decimal.Parse(operand) };
+            textDisplay.Text = textDisplay.Text + "%";
+        }
+        private void textMod_Click(object sender, RoutedEventArgs e)
+        {
+            @operator = new Mod { Operand1 = Decimal.Parse(operand) };
+            textDisplay.Text = "mod(" + textDisplay.Text + "," + textDisplay + ")";
+        }
+
+        private void textPower_Click(object sender, RoutedEventArgs e)
+        {
+            @operator = new Power { Operand1 = Decimal.Parse(operand) };
+            textDisplay.Text = textDisplay.Text + "^";
+        }
 
 
+        // NO OPERAND MATHS //
         private void buttonPI_Click(object sender, RoutedEventArgs e)
         {
             textDisplay.Text = "π";
@@ -115,10 +130,11 @@ namespace Calculator
 
         private void buttonE_Click(object sender, RoutedEventArgs e)
         {
-            
             textDisplay.Text = "e";
         }
 
+
+        // CLEAR BUTTONS // 
         private void buttonClear_Click(object sender, RoutedEventArgs e)
         {
             textDisplay.Text = "";
@@ -126,72 +142,55 @@ namespace Calculator
 
         private void buttonBackspace_Click(object sender, RoutedEventArgs e)
         {
-            if (operand == "")
-            {
-                textDisplay.Text = textDisplay.Text.Remove( textDisplay.Text.Length - 1);
-                
-            }
+            if (operand == "")                                                                  //////////////////////////////////////////////////////////////////////////
+            {                                                                                   //  Here we use the method Remove(),                                    //
+                textDisplay.Text = textDisplay.Text.Remove(textDisplay.Text.Length - 1);       //  and use it to Display the length of the text                        //
+                                                                                               //  decreased/removed by one(-1) --> ( text.Display.Text.Length - 1 );  //
+            }                                                                                   //////////////////////////////////////////////////////////////////////////
             else if (textDisplay.Text.Length > 0)
             {
                 textDisplay.Text = textDisplay.Text.Remove(textDisplay.Text.Length - 1);
             }
-
         }
 
 
-
-        /*private void buttonSub_Click(object sender, RoutedEventArgs e)
+        // SYMBOLS //
+        private void buttonDec_Click(object sender, RoutedEventArgs e)
         {
-            operation = "-";
-            buttonDisplay.Text = "0";
-        }
-
-        private void buttonTimes_Click(object sender, RoutedEventArgs e)
-        {
-            operation = "x";
-            buttonDisplay.Text = "0";
-        }
-
-        private void buttonDiv_Click(object sender, RoutedEventArgs e)
-        {
-            operation = "/";
-            buttonDisplay.Text = "0";
-        }
-
-        private void buttonPercent_Click(object sender, RoutedEventArgs e)
-        {
-            operation = "%";
-            buttonDisplay.Text = (number1 / 100).ToString();
-        }
-
-        private void buttonPar_Click(object sender, RoutedEventArgs e)
-        {
-            operation = "( )";
-            buttonDisplay.Text = 0;
-        }
-
-        
-
-        private void buttonClear_Click(object sender, RoutedEventArgs e)
-        {
-            number1 = 0;
-            number2 = 0;
-            operation = "";
-            buttonDisplay.Text = "0";
-        }
-
-        private void buttonBackspace_Click(object sender, RoutedEventArgs e)
-        {
-            if (operation == "")
+            if (textDisplay.Text == ".")
             {
-                number1 = (number1 / 10);
-                buttonDisplay.Text = number1.ToString();
+                if (!textDisplay.Text.Contains("."))
+                {
+                    textDisplay.Text = textDisplay.Text + textDisplay.Text;
+                }
+                else
+                {
+                    textDisplay.Text = textDisplay.Text + textDisplay.Text;
+                }
             }
-            else
+        }
+
+        private void buttonEquals_Click(object sender, RoutedEventArgs e)
+        {
+            /*  THERE IS ALSO THIS WAY TO CONVERT SOMETHING TO DECIMAL  
+             * 
+             *  decimal decimalValue;
+             *  decimalValue = System.Convert.ToDecimal(stringVal);     
+             */          
+
+            if (@operator is IOneOperandCalculation<decimal> oneOperation)
             {
-                number2 = (number2 / 10);
-                buttonDisplay.Text = number2.ToString();
+                decimal one_value = oneOperation.Calculate();
+                textDisplay.Text = textDisplay.Text + "=" + one_value.ToString();
+
             }
-        }*/
+
+            if (@operator is ITwoOperandCalculation<decimal> twoOperation)
+            {
+                twoOperation.Operand2 = Decimal.Parse(operand);
+                decimal two_value = twoOperation.Calculate();
+                textDisplay.Text = textDisplay.Text + "=" + two_value.ToString();
+            }
+        }
     }
 }

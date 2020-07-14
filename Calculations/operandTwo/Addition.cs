@@ -9,7 +9,6 @@ namespace Calculator.Calculations.operandTwo
     {
         //------------------------------------------>same as { get{return "Add";} }
         protected override string CalculationName => "Addition";
-
         
         public decimal Operand1 { get; set; }
         public decimal Operand2 { get; set; }

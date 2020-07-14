@@ -11,7 +11,7 @@ namespace Calculator.Calculations.operandNo
         
         public decimal Calculate()
         {
-            return (decimal)Math.E;
+            return Convert.ToDecimal(Math.E);
         }
     }
 }

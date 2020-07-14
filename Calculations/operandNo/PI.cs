@@ -11,7 +11,7 @@ namespace Calculator.Calculations.operandNo
 
         public decimal Calculate()
         {
-            return (decimal)Math.PI;
+            return Convert.ToDecimal(Math.PI);
         }        
     }
 }
