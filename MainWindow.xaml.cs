@@ -170,6 +170,18 @@ namespace Calculator
             }
         }
 
+        private void buttonPar1_Click(object sender, RoutedEventArgs e)
+        {
+            textDisplay.Text = textDisplay.Text + "(";
+        }
+
+        private void buttonPar2_Click(object sender, RoutedEventArgs e)
+        {
+            textDisplay.Text = textDisplay.Text + ")";
+        }
+
+
+        // EQUALS //
         private void buttonEquals_Click(object sender, RoutedEventArgs e)
         {
             /*  THERE IS ALSO THIS WAY TO CONVERT SOMETHING TO DECIMAL  
@@ -190,6 +202,6 @@ namespace Calculator
                 decimal two_value = twoOperation.Calculate();
                 textDisplay.Text = textDisplay.Text + "=" + two_value.ToString();
             }
-        }
+        }          
     }
 }
