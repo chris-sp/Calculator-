@@ -8,15 +8,12 @@ namespace Calculator.Calculations.operandOne
     class Abs : CalculationBase, IOneOperandCalculation<decimal>
     {
         protected override string CalculationName => "Abs";
-
-        public decimal Calculate { get; }
+        
         public decimal Operand { get; set; }
         
-        public decimal Absolute(decimal a)
+        public decimal Absolute()
         {
-            decimal abs_calc = a;
-            abs_calc = Math.Abs(a);
-            return abs_calc;
+            return Convert.ToDecimal(Math.Abs(Operand));
         }
     }    
 }

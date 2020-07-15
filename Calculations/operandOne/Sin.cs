@@ -14,9 +14,7 @@ namespace Calculator.Calculations.operandOne
 
         public double Sine(double a)
         {
-            double sin_calc;
-            sin_calc = Math.Sin(a);
-            return sin_calc;
+            return Convert.ToDecimal(Math.Sin(Convert.ToDouble(Operand)));
         }
     }
 }

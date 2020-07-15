@@ -8,15 +8,12 @@ namespace Calculator.Calculations.operandOne
     class Acos : CalculationBase, IOneOperandCalculation<decimal>
     {
         protected override string CalculationName => "Acos";
-
-        public decimal Calculate { get; }
+        
         public decimal Operand { get; set; }
 
-        public double AngleCosine(double a)
+        public decimal Calculate()
         {
-            double acos_calc;
-            acos_calc = Math.Sqrt(a);
-            return acos_calc;
+            return  Convert.ToDecimal(Math.Acos(Convert.ToDouble(Operand));        
         }
     }
 }

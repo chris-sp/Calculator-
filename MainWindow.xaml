@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Calculator"
         mc:Ignorable="d"
-        Title="Calculator##" Background="Black" Height="700" Width="400">
+        Title="Calculator##" Height="700" Width="400">
     <Border Background="Black">
         <Grid>
             <Grid.ColumnDefinitions>
@@ -61,18 +61,12 @@
             <Button x:Name="textMod" Foreground="White" Background="Black" FontSize="25" Grid.Column="4" Grid.Row="1" VerticalAlignment="Bottom" Click="textMod_Click">mod</Button>
             <Button x:Name="textPower" Foreground="White" Background="Black" FontSize="25" Grid.Column="3" Grid.Row="1" VerticalAlignment="Bottom" Click="textPower_Click">x^n</Button>
 
-            
-            
-            
-            <!--NEED TO FIND A SOLUTION FOR THE FUNCTION KEY!!!!!!-->
-            
-            <!--<StackPanel  Grid.Column="4" Grid.Row="5">-->                
-                <!--Function Buttons-->
-            <!--<TextBlock Text="⨍" x:Name="buttonFunction"></TextBlock>
-            </StackPanel>-->
-
-            
-            
+            <!--Function Buttons (⨍)-->
+            <Popup >
+                <TextBlock x:Name="buttonFunction"  Grid.Column="1">
+                    aasdasd
+                </TextBlock>
+            </Popup>            
 
             <!--History Button-->
             <!--<Button x:Name="buttonHistory" Foreground="White" Background="DarkSlateGray" FontSize="25" Grid.Column="4" Grid.Row="5">↻</Button>-->

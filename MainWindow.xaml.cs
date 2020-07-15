@@ -182,7 +182,6 @@ namespace Calculator
             {
                 decimal one_value = oneOperation.Calculate();
                 textDisplay.Text = textDisplay.Text + "=" + one_value.ToString();
-
             }
 
             if (@operator is ITwoOperandCalculation<decimal> twoOperation)

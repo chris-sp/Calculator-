@@ -9,15 +9,12 @@ namespace Calculator.Calculations.operandOne
     class Atan : CalculationBase, IOneOperandCalculation<decimal>
     {
         protected override string CalculationName => "Atan";
-
-        public decimal Calculate { get; }
+                
         public decimal Operand { get; set; }
 
-        public double AngleTangent(double a)
+        public decimal Calculate()
         {
-            double atan_calc;
-            atan_calc = Math.Atan(a);
-            return atan_calc;
+            return Convert.ToDecimal(Math.Atan(Convert.ToDouble(Operand)));
         }
     }
 }

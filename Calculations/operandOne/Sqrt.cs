@@ -8,16 +8,12 @@ namespace Calculator.Calculations.operandOne
     class Sqrt : CalculationBase, IOneOperandCalculation<decimal>
     {
         protected override string CalculationName => "Square";
-
-
-        public decimal Calculate { get; }
+        
         public decimal Operand { get; set; }
 
-        public double Square(double a)
+        public decimal Calculate()
         {
-            double sqrt_calc;
-            sqrt_calc = Math.Sqrt(a);
-            return sqrt_calc;
+            return Convert.ToDecimal(Math.Sqrt(Convert.ToDouble(Operand)));
         }
     }
 }

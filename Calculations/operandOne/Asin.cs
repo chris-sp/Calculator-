@@ -8,15 +8,12 @@ namespace Calculator.Calculations.operandOne
     class Asin : CalculationBase, IOneOperandCalculation<decimal>
     {
         protected override string CalculationName => "Asin";
-
-        public decimal Calculate { get; }
+       
         public decimal Operand { get; set; }
 
-        public double AngleSine(double a)
+        public decimal Calculate()
         {
-            double asin_calc;
-            asin_calc = Math.Sqrt(a);
-            return asin_calc;
+            return Convert.ToDecimal(Math.Asin(Convert.ToDouble(Operand)));
         }
     }
 }

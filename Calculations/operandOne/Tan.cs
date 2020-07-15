@@ -7,14 +7,11 @@ namespace Calculator.Calculations.operandOne
     {
         protected override string CalculationName => "Tan";
 
-        public decimal Calculate { get; }
         public decimal Operand { get; set; }
 
-        public double Tangent(double a)
+        public decimal Calculate()
         {
-            double tan_calc;
-            tan_calc = Math.Tan(a);
-            return tan_calc;
+            return Convert.ToDecimal(Math.Tan(Convert.ToDouble(Operand)));
         }        
     }
 }

@@ -8,15 +8,12 @@ namespace Calculator.Calculations.operandOne
     class Floor : CalculationBase, IOneOperandCalculation<decimal>
     {
         protected override string CalculationName => "Floor";
-
-        public decimal Calculate { get; }
+        
         public decimal Operand { get; set; }
 
-        public double Flooring(double a)
+        public decimal Calculate()
         {
-            double floor_calc;
-            floor_calc = Math.Floor(a);
-            return floor_calc;
+            return Convert.ToDecimal(Math.Floor(Convert.ToDouble(Operand)));
         }
     }
 }

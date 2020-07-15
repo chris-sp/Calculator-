@@ -12,11 +12,9 @@ namespace Calculator.Calculations.operandOne
         public decimal Calculate { get; }
         public decimal Operand { get; set; }
 
-        public double Rounding(double a)
+        public decimal Calculate()
         {
-            double round_calc;
-            round_calc = Math.Round(a);
-            return round_calc;
+            return Convert.ToDecimal(Math.Round(Operand));
         }
     }
 }

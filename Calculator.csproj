@@ -28,7 +28,20 @@
   <ItemGroup>
     <Compile Include="Calculations\operandNo\E.cs" />
     <Compile Include="Calculations\operandNo\PI.cs" />
+    <Compile Include="Calculations\operandOne\Abs.cs" />
+    <Compile Include="Calculations\operandOne\Acos.cs" />
+    <Compile Include="Calculations\operandOne\Asin.cs" />
+    <Compile Include="Calculations\operandOne\Atan.cs" />
+    <Compile Include="Calculations\operandOne\Ceiling.cs" />
+    <Compile Include="Calculations\operandOne\Cos.cs" />
+    <Compile Include="Calculations\operandOne\Exp.cs" />
+    <Compile Include="Calculations\operandOne\Floor.cs" />
+    <Compile Include="Calculations\operandOne\Log.cs" />
     <Compile Include="Calculations\operandOne\Percentage.cs" />
+    <Compile Include="Calculations\operandOne\Round.cs" />
+    <Compile Include="Calculations\operandOne\Sin.cs" />
+    <Compile Include="Calculations\operandOne\Sqrt.cs" />
+    <Compile Include="Calculations\operandOne\Tan.cs" />
     <Compile Include="Calculations\operandTwo\Addition.cs" />
     <Compile Include="Calculations\operandTwo\Div.cs" />
     <Compile Include="Calculations\operandTwo\Mod.cs" />
