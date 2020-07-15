@@ -7,12 +7,11 @@ namespace Calculator.Calculations.operandOne
 {
     class Sin : CalculationBase, IOneOperandCalculation<decimal>
     {
-        protected override string CalculationName => "Sin";
-
-        public decimal Calculate { get; }
+        protected override string CalculationName => "Sine";
+        
         public decimal Operand { get; set; }
 
-        public double Sine(double a)
+        public decimal Calculate()
         {
             return Convert.ToDecimal(Math.Sin(Convert.ToDouble(Operand)));
         }

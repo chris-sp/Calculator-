@@ -62,10 +62,11 @@
             <Button x:Name="textPower" Foreground="White" Background="Black" FontSize="25" Grid.Column="3" Grid.Row="1" VerticalAlignment="Bottom" Click="textPower_Click">x^n</Button>
 
             <!--Function Buttons (⨍)-->
-            <Popup >
-                <TextBlock x:Name="buttonFunction"  Grid.Column="1">
-                    aasdasd
-                </TextBlock>
+            <Popup x:Name="buttonFunction" IsOpen="True" Grid.Column="4" Grid.Row="5" >
+                <StackPanel Background="Purple">
+                    <CheckBox Name="f" Content="Popup Window"> </CheckBox>
+                    <Button Content ="⨍"></Button>
+                </StackPanel>
             </Popup>            
 
             <!--History Button-->

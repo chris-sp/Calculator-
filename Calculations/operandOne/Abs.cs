@@ -11,7 +11,7 @@ namespace Calculator.Calculations.operandOne
         
         public decimal Operand { get; set; }
         
-        public decimal Absolute()
+        public decimal Calculate()
         {
             return Convert.ToDecimal(Math.Abs(Operand));
         }

@@ -13,7 +13,7 @@ namespace Calculator.Calculations.operandOne
 
         public decimal Calculate()
         {
-            return  Convert.ToDecimal(Math.Acos(Convert.ToDouble(Operand));        
+            return  Convert.ToDecimal(Math.Acos(Convert.ToDouble(Operand)));        
         }
     }
 }
