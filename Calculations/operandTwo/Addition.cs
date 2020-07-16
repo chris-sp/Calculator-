@@ -15,7 +15,7 @@ namespace Calculator.Calculations.operandTwo
 
         public decimal Calculate()
         {     
-            return Operand1 + Operand2;            
+            return Operand1 + Operand2;
         }
     }
 }

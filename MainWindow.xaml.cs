@@ -125,12 +125,12 @@ namespace Calculator
         // NO OPERAND MATHS //
         private void buttonPI_Click(object sender, RoutedEventArgs e)
         {
-            textDisplay.Text = "π";
+            textDisplay.Text = textDisplay.Text + "π";
         }
 
         private void buttonE_Click(object sender, RoutedEventArgs e)
         {
-            textDisplay.Text = "e";
+            textDisplay.Text = textDisplay.Text + "e";
         }
 
 
@@ -155,19 +155,17 @@ namespace Calculator
 
 
         // SYMBOLS //
-        private void buttonDec_Click(object sender, RoutedEventArgs e)
-        {
-            if (textDisplay.Text == ".")
+        private void buttonDeci_Click(object sender, RoutedEventArgs e)
+        {            
+            if (!textDisplay.Text.Contains("."))
             {
-                if (!textDisplay.Text.Contains("."))
-                {
-                    textDisplay.Text = textDisplay.Text + textDisplay.Text;
-                }
-                else
-                {
-                    textDisplay.Text = textDisplay.Text + textDisplay.Text;
-                }
+                textDisplay.Text = textDisplay.Text + ".";
+                operand = (operand + ".").ToString();
             }
+            //else
+            //{
+            //    break;
+            //}            
         }
 
         private void buttonPar1_Click(object sender, RoutedEventArgs e)

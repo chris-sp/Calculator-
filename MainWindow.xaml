@@ -30,7 +30,7 @@
             <TextBox x:Name="textDisplay" Foreground="White" Background="Black" BorderBrush="Black" IsReadOnly="True" TextAlignment="Left" VerticalAlignment="Center" FontSize="40" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="5" Grid.RowSpan="2"></TextBox>
 
             <!--Number Buttons-->
-            <Button x:Name="button0" Foreground="White" Background="Black" BorderBrush="Black" FontSize="25" Grid.Column="1" Grid.Row="6" Click="button0_Click">0</Button>
+            <Button x:Name="button0" Foreground="White" Background="Black" BorderBrush="Black" FontSize="25" Grid.Column="0" Grid.Row="6" Grid.ColumnSpan="2" Click="button0_Click">0</Button>
             <Button x:Name="button1" Foreground="White" Background="Black" BorderBrush="Black" FontSize="25" Grid.Column="0" Grid.Row="5" Click="button1_Click">1</Button>
             <Button x:Name="button2" Foreground="White" Background="Black" BorderBrush="Black" FontSize="25" Grid.Column="1" Grid.Row="5" Click="button2_Click">2</Button>
             <Button x:Name="button3" Foreground="White" Background="Black" BorderBrush="Black" FontSize="25" Grid.Column="2" Grid.Row="5" Click="button3_Click">3</Button>
@@ -56,11 +56,31 @@
             <Button x:Name="buttonPar2" Foreground="ForestGreen" Background="Black" BorderBrush="Indigo" FontSize="25" Grid.Column="1" Grid.Row="2" Click="buttonPar2_Click">)</Button>
             <Button x:Name="buttonE" Foreground="ForestGreen" Background="Black" BorderBrush="Indigo" FontSize="25" Grid.Column="4" Grid.Row="3" Click="buttonE_Click">e</Button>
             <Button x:Name="buttonPI" Foreground="ForestGreen" Background="Black" BorderBrush="Indigo" FontSize="25" Grid.Column="4" Grid.Row="4" Click="buttonPI_Click">π</Button>
-            <Button x:Name="buttonDec" Foreground="ForestGreen" Background="Black" BorderBrush="Indigo" FontSize="40" Grid.Column="2" Grid.Row="6" Click="buttonDec_Click">.</Button>
+            <Button x:Name="buttonDeci" Foreground="ForestGreen" Background="Black" BorderBrush="Indigo" FontSize="40" Grid.Column="2" Grid.Row="6" Click="buttonDeci_Click">.</Button>
                
             <!-- FUNCTIONS -->
-            <Button x:Name="textMod" Foreground="White" Background="Black" FontSize="25" Grid.Column="4" Grid.Row="1" VerticalAlignment="Bottom" Click="textMod_Click">mod</Button>
-            <Button x:Name="textPower" Foreground="White" Background="Black" FontSize="25" Grid.Column="3" Grid.Row="1" VerticalAlignment="Bottom" Click="textPower_Click">x^n</Button>
+            <Button Content="(⨍)Functions  /  Trigonometry(📐)" Foreground="Indigo" Background="Black" Grid.Column="0"
+                   Grid.Row="1" Grid.ColumnSpan="5" FontSize="20" VerticalAlignment="Bottom" HorizontalAlignment="Stretch">
+                <Button.ContextMenu>
+                    <ContextMenu>
+                        <MenuItem x:Name="buttonAbsolute" Header="abs" />
+                        <MenuItem x:Name="buttonAcosine" Header="acos" />
+                        <MenuItem x:Name="buttonAsine" Header="asin" />
+                        <MenuItem x:Name="buttonAtangible" Header="atan" />
+                        <MenuItem x:Name="buttonCeiling" Header="ceiling" />
+                        <MenuItem x:Name="buttonCosine" Header="cos" />
+                        <MenuItem x:Name="buttonExponential" Header="exp" />
+                        <MenuItem x:Name="buttonFloor" Header="floor" />
+                        <MenuItem x:Name="buttonLog" Header="log" />
+                        <MenuItem x:Name="buttonMod" Header="mod" />
+                        <MenuItem x:Name="buttonTanginble" Header="tan" />
+                        <MenuItem x:Name="buttonSine" Header="sine" />
+                        <MenuItem x:Name="buttonSquare" Header="sqrt" />
+                        <MenuItem x:Name="buttonPower" Header="x^n" />
+
+                    </ContextMenu>
+                </Button.ContextMenu>
+            </Button>            
 
             <!--Function Buttons (⨍)-->
             <!--<Popup Name="popup" IsOpen="True" Grid.Column="4" Grid.Row="5" HorizontalAlignment="Center" VerticalAlignment="Center">
