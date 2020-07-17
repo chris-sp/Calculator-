@@ -7,7 +7,7 @@
         mc:Ignorable="d"
         Title="Calculator##" Height="700" Width="400">
     <Border Background="Black">
-        <Grid>
+        <Grid>            
             <Grid.ColumnDefinitions>
                 <ColumnDefinition />
                 <ColumnDefinition />
@@ -27,40 +27,260 @@
             </Grid.RowDefinitions>
 
             <!--Display Box-->
-            <TextBox x:Name="textDisplay" Foreground="White" Background="Black" BorderBrush="Black" IsReadOnly="True" TextAlignment="Left" VerticalAlignment="Center" FontSize="40" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="5" Grid.RowSpan="2"></TextBox>
+            <!--<TextBox x:Name="textDisplay" Foreground="White" Background="Black" BorderBrush="Black" IsReadOnly="True" TextAlignment="Left" VerticalAlignment="Center" FontSize="40" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="5" Grid.RowSpan="2"></TextBox>-->
+            
+            <Popup x:Name="Popup" StaysOpen="False" Width="300" Height="50">
+                <TextBlock Background="Green" Text="!!!!!!"></TextBlock>
+            </Popup>
 
-            <!--Number Buttons-->
-            <Button x:Name="button0" Foreground="White" Background="Black" BorderBrush="Black" FontSize="25" Grid.Column="0" Grid.Row="6" Grid.ColumnSpan="2" Click="button0_Click">0</Button>
-            <Button x:Name="button1" Foreground="White" Background="Black" BorderBrush="Black" FontSize="25" Grid.Column="0" Grid.Row="5" Click="button1_Click">1</Button>
-            <Button x:Name="button2" Foreground="White" Background="Black" BorderBrush="Black" FontSize="25" Grid.Column="1" Grid.Row="5" Click="button2_Click">2</Button>
-            <Button x:Name="button3" Foreground="White" Background="Black" BorderBrush="Black" FontSize="25" Grid.Column="2" Grid.Row="5" Click="button3_Click">3</Button>
-            <Button x:Name="button4" Foreground="White" Background="Black" BorderBrush="Black" FontSize="25" Grid.Column="0" Grid.Row="4" Click="button4_Click">4</Button>
-            <Button x:Name="button5" Foreground="White" Background="Black" BorderBrush="Black" FontSize="25" Grid.Column="1" Grid.Row="4" Click="button5_Click">5</Button>
-            <Button x:Name="button6" Foreground="White" Background="Black" BorderBrush="Black" FontSize="25" Grid.Column="2" Grid.Row="4" Click="button6_Click">6</Button>
-            <Button x:Name="button7" Foreground="White" Background="Black" BorderBrush="Black" FontSize="25" Grid.Column="0" Grid.Row="3" Click="button7_Click">7</Button>
-            <Button x:Name="button8" Foreground="White" Background="Black" BorderBrush="Black" FontSize="25" Grid.Column="1" Grid.Row="3" Click="button8_Click">8</Button>
-            <Button x:Name="button9" Foreground="White" Background="Black" BorderBrush="Black" FontSize="25" Grid.Column="2" Grid.Row="3" Click="button9_Click">9</Button>
+            <!--Number Buttons-->            
+            <!--Button 0-->
+            <Button 
+                x:Name="button0"
+                Foreground="White"
+                Background="Black"
+                BorderBrush="Black"
+                Grid.Column="0"
+                Grid.Row="6"
+                Grid.ColumnSpan="2"                
+                FontSize="25"                                
+                Click="button0_Click">0</Button>
+            <!--Button 1-->
+            <Button 
+                x:Name="button1" 
+                Foreground="White" 
+                Background="Black" 
+                BorderBrush="Black" 
+                FontSize="25" 
+                Grid.Column="0" 
+                Grid.Row="5" 
+                Click="button1_Click">1</Button>
+            <!--Button 2-->
+            <Button 
+                x:Name="button2" 
+                Foreground="White" 
+                Background="Black" 
+                BorderBrush="Black" 
+                FontSize="25" 
+                Grid.Column="1" 
+                Grid.Row="5" 
+                Click="button2_Click">2</Button>
+            <!--Button 3-->
+            <Button 
+                x:Name="button3" 
+                Foreground="White" 
+                Background="Black" 
+                BorderBrush="Black" 
+                FontSize="25" 
+                Grid.Column="2"                
+                Grid.Row="5" 
+                Click="button3_Click">3</Button>
+            <!--Button 4-->
+            <Button 
+                x:Name="button4" 
+                Foreground="White" 
+                Background="Black" 
+                BorderBrush="Black" 
+                FontSize="25" Grid.Column="0" 
+                Grid.Row="4" 
+                Click="button4_Click">4</Button>
+            <!--Button 5-->
+            <Button 
+                x:Name="button5" 
+                Foreground="White" 
+                Background="Black" 
+                BorderBrush="Black" 
+                FontSize="25" 
+                Grid.Column="1" 
+                Grid.Row="4" 
+                Click="button5_Click">5</Button>
+            <!--Button 6-->
+            <Button 
+                x:Name="button6" 
+                Foreground="White" 
+                Background="Black" 
+                BorderBrush="Black" 
+                FontSize="25" 
+                Grid.Column="2" 
+                Grid.Row="4" 
+                Click="button6_Click">6</Button>
+            <!--Button 7-->
+            <Button 
+                x:Name="button7" 
+                Foreground="White" 
+                Background="Black" 
+                BorderBrush="Black" 
+                FontSize="25" 
+                Grid.Column="0" 
+                Grid.Row="3" 
+                Click="button7_Click">7</Button>
+            <!--Button 8-->
+            <Button 
+                x:Name="button8" 
+                Foreground="White" 
+                Background="Black" 
+                BorderBrush="Black" 
+                FontSize="25" 
+                Grid.Column="1" 
+                Grid.Row="3" 
+                Click="button8_Click">8</Button>
+            <!--Button 9-->
+            <Button 
+                x:Name="button9" 
+                Foreground="White" 
+                Background="Black" 
+                BorderBrush="Black" 
+                FontSize="25" 
+                Grid.Column="2" 
+                Grid.Row="3" 
+                Click="button9_Click">9</Button>            
 
-            <!--Clear Buttons-->
-            <Button x:Name="buttonClear" Foreground="ForestGreen" Background="Black" BorderBrush="Indigo" FontSize="25" Grid.Column="3" Grid.Row="2" Click="buttonClear_Click">C</Button>
-            <Button x:Name="buttonBackspace" Foreground="ForestGreen" Background="Black" BorderBrush="Indigo" FontSize="25" Grid.Column="4" Grid.Row="2" Click="buttonBackspace_Click">⇐</Button>
+            <!--Clear Buttons-->            
+            <!--Button C-->
+            <Button 
+                x:Name="buttonClear" 
+                Foreground="ForestGreen" 
+                Background="Black" 
+                BorderBrush="Indigo" 
+                FontSize="25" 
+                Grid.Column="3" 
+                Grid.Row="2" 
+                Click="buttonClear_Click">C</Button>
+            <!--Button ⇐-->
+            <Button 
+                x:Name="buttonBackspace" 
+                Foreground="ForestGreen" 
+                Background="Black"
+                BorderBrush="Indigo" 
+                FontSize="25" 
+                Grid.Column="4" 
+                Grid.Row="2" 
+                Click="buttonBackspace_Click">⇐</Button>            
 
             <!--Math Buttons-->
-            <Button x:Name="buttonEquals" Foreground="White" Background="Indigo" BorderBrush="Indigo" FontSize="25" Grid.Column="4" Grid.Row="5" Grid.RowSpan="2" Click="buttonEquals_Click">=</Button>
-            <Button x:Name="buttonAdd" Foreground="ForestGreen" Background="Black" BorderBrush="Indigo" FontSize="15" Grid.Column="3" Grid.Row="6" Click="buttonAdd_Click">➕</Button>
-            <Button x:Name="buttonSub" Foreground="ForestGreen" Background="Black" BorderBrush="Indigo" FontSize="15" Grid.Column="3" Grid.Row="5" Click="buttonSub_Click">➖</Button>
-            <Button x:Name="buttonTimes" Foreground="ForestGreen" Background="Black" BorderBrush="Indigo" FontSize="30" Grid.Column="3" Grid.Row="4" Click="buttonTimes_Click">×</Button>
-            <Button x:Name="buttonDiv" Foreground="ForestGreen" Background="Black" BorderBrush="Indigo" FontSize="30" Grid.Column="3" Grid.Row="3" Click="buttonDiv_Click">⁄</Button>
-            <Button x:Name="buttonPercent" Foreground="ForestGreen" Background="Black" BorderBrush="Indigo" FontSize="25" Grid.Column="2" Grid.Row="2" Click="buttonPercent_Click">%</Button>
-            <Button x:Name="buttonPar1" Foreground="ForestGreen" Background="Black" BorderBrush="Indigo" FontSize="25" Grid.Column="0" Grid.Row="2" Click="buttonPar1_Click">(</Button>
-            <Button x:Name="buttonPar2" Foreground="ForestGreen" Background="Black" BorderBrush="Indigo" FontSize="25" Grid.Column="1" Grid.Row="2" Click="buttonPar2_Click">)</Button>
-            <Button x:Name="buttonE" Foreground="ForestGreen" Background="Black" BorderBrush="Indigo" FontSize="25" Grid.Column="4" Grid.Row="3" Click="buttonE_Click">e</Button>
-            <Button x:Name="buttonPI" Foreground="ForestGreen" Background="Black" BorderBrush="Indigo" FontSize="25" Grid.Column="4" Grid.Row="4" Click="buttonPI_Click">π</Button>
-            <Button x:Name="buttonDeci" Foreground="ForestGreen" Background="Black" BorderBrush="Indigo" FontSize="40" Grid.Column="2" Grid.Row="6" Click="buttonDeci_Click">.</Button>
+            <!--Button =-->
+            <Button 
+                x:Name="buttonEquals" 
+                Foreground="White" 
+                Background="Indigo" 
+                BorderBrush="Indigo" 
+                FontSize="25" 
+                Grid.Column="4" 
+                Grid.Row="5"
+                Grid.RowSpan="2" 
+                Click="buttonEquals_Click">=</Button>
+            <!--Button +-->
+            <Button 
+                x:Name="buttonAdd"
+                Foreground="ForestGreen"
+                Background="Black"
+                BorderBrush="Indigo"
+                FontSize="15"
+                Grid.Column="3" 
+                Grid.Row="6" 
+                Click="buttonAdd_Click">➕</Button>
+            <!--Button - -->
+            <Button
+                x:Name="buttonSub"
+                Foreground="ForestGreen"
+                Background="Black" 
+                BorderBrush="Indigo"
+                FontSize="15" 
+                Grid.Column="3" 
+                Grid.Row="5" 
+                Click="buttonSub_Click">➖</Button>
+            <!--Button ^-->
+            <Button 
+                x:Name="buttonTimes"
+                Foreground="ForestGreen"
+                Background="Black" 
+                BorderBrush="Indigo"
+                FontSize="30"
+                Grid.Column="3"
+                Grid.Row="4"
+                Click="buttonTimes_Click">×</Button>
+            <!--Button /-->
+            <Button 
+                x:Name="buttonDiv"
+                Foreground="ForestGreen"
+                Background="Black" 
+                BorderBrush="Indigo"
+                FontSize="30"
+                Grid.Column="3" 
+                Grid.Row="3" 
+                Click="buttonDiv_Click">⁄</Button>
+            <!--Button %-->
+            <Button 
+                x:Name="buttonPercent"
+                Foreground="ForestGreen"
+                Background="Black"
+                BorderBrush="Indigo" 
+                FontSize="25" 
+                Grid.Column="2" 
+                Grid.Row="2" 
+                Click="buttonPercent_Click">%</Button>
+            <!--Button (-->
+            <Button 
+                x:Name="buttonPar1"
+                Foreground="ForestGreen"
+                Background="Black" 
+                BorderBrush="Indigo"
+                FontSize="25" 
+                Grid.Column="0" 
+                Grid.Row="2" 
+                Click="buttonPar1_Click">(</Button>
+            <!--Button )-->
+            <Button 
+                x:Name="buttonPar2"
+                Foreground="ForestGreen"
+                Background="Black"
+                BorderBrush="Indigo" 
+                FontSize="25" 
+                Grid.Column="1"
+                Grid.Row="2" 
+                Click="buttonPar2_Click">)</Button>
+            <!--Button e-->
+            <Button 
+                x:Name="buttonE"
+                Foreground="ForestGreen"
+                Background="Black" 
+                BorderBrush="Indigo" 
+                FontSize="25" 
+                Grid.Column="4"                
+                Grid.Row="3" 
+                Click="buttonE_Click">e</Button>
+            <!--Button π-->
+            <Button 
+                x:Name="buttonPI"                 
+                Foreground="ForestGreen"
+                Background="Black"
+                BorderBrush="Indigo"
+                FontSize="25"
+                Grid.Column="4"
+                Grid.Row="4" 
+                Click="buttonPI_Click">π</Button>
+            <!--Button .-->
+            <Button 
+                x:Name="buttonDeci"
+                Foreground="ForestGreen"
+                Background="Black" 
+                BorderBrush="Indigo"
+                FontSize="40" 
+                Grid.Column="2"
+                Grid.Row="6" 
+                Click="buttonDeci_Click">.</Button>
                
             <!-- FUNCTIONS -->
-            <Button Content="(⨍)Functions  /  Trigonometry(📐)" Foreground="Indigo" Background="Black" Grid.Column="0"
-                   Grid.Row="1" Grid.ColumnSpan="5" FontSize="20" VerticalAlignment="Bottom" HorizontalAlignment="Stretch">
+            <Button 
+                Content="(⨍)Functions  /  Trigonometry(📐)" 
+                Foreground="LightGray"
+                Background="Black" 
+                Grid.Column="0"
+                Grid.Row="1" 
+                Grid.ColumnSpan="5"
+                FontSize="20" 
+                VerticalAlignment="Bottom"
+                HorizontalAlignment="Stretch">
                 <Button.ContextMenu>
                     <ContextMenu>
                         <MenuItem x:Name="buttonAbsolute" Header="abs" />
@@ -88,9 +308,8 @@
                     <TextBlock Name="⨍" Background="Aqua">asd</TextBlock>
                     <Button Content ="⨍"></Button>
                 </StackPanel>
-            </Popup>-->
-            
-  
+            </Popup>-->         
+
 
             <!--History Button-->
             <!--<Button x:Name="buttonHistory" Foreground="White" Background="DarkSlateGray" FontSize="25" Grid.Column="4" Grid.Row="5">↻</Button>-->
