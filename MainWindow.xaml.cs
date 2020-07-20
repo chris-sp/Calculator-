@@ -200,6 +200,6 @@ namespace Calculator
                 decimal two_value = twoOperation.Calculate();
                 textDisplay.Text = textDisplay.Text + "=" + two_value.ToString();
             }
-        }          
+        }        
     }
 }

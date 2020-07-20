@@ -7,7 +7,9 @@
         mc:Ignorable="d"
         Title="Calculator##" Height="700" Width="400">
     <Border Background="Black">
-        <Grid>            
+
+
+        <Grid>
             <Grid.ColumnDefinitions>
                 <ColumnDefinition />
                 <ColumnDefinition />
@@ -27,19 +29,15 @@
             </Grid.RowDefinitions>
 
             <!--Display Box-->
-            <!--<TextBox x:Name="textDisplay" Foreground="White" Background="Black" BorderBrush="Black" IsReadOnly="True" TextAlignment="Left" VerticalAlignment="Center" FontSize="40" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="5" Grid.RowSpan="2"></TextBox>-->
-            
-            <Popup x:Name="Popup" StaysOpen="False" Width="300" Height="50">
-                <TextBlock Background="Green" Text="!!!!!!"></TextBlock>
-            </Popup>
+            <TextBox x:Name="textDisplay" Foreground="White" Background="Black" BorderBrush="Black" IsReadOnly="True" TextAlignment="Left" VerticalAlignment="Center" FontSize="40" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="5" Grid.RowSpan="2"></TextBox>
 
-            <!--Number Buttons-->            
+            <!--Number Buttons-->
             <!--Button 0-->
             <Button 
                 x:Name="button0"
-                Foreground="White"
+                Foreground="LightGray"
                 Background="Black"
-                BorderBrush="Black"
+                BorderBrush="Indigo"
                 Grid.Column="0"
                 Grid.Row="6"
                 Grid.ColumnSpan="2"                
@@ -48,9 +46,9 @@
             <!--Button 1-->
             <Button 
                 x:Name="button1" 
-                Foreground="White" 
+                Foreground="LightGray" 
                 Background="Black" 
-                BorderBrush="Black" 
+                BorderBrush="Indigo" 
                 FontSize="25" 
                 Grid.Column="0" 
                 Grid.Row="5" 
@@ -58,9 +56,9 @@
             <!--Button 2-->
             <Button 
                 x:Name="button2" 
-                Foreground="White" 
+                Foreground="LightGray" 
                 Background="Black" 
-                BorderBrush="Black" 
+                BorderBrush="Indigo" 
                 FontSize="25" 
                 Grid.Column="1" 
                 Grid.Row="5" 
@@ -68,9 +66,9 @@
             <!--Button 3-->
             <Button 
                 x:Name="button3" 
-                Foreground="White" 
+                Foreground="LightGray" 
                 Background="Black" 
-                BorderBrush="Black" 
+                BorderBrush="Indigo" 
                 FontSize="25" 
                 Grid.Column="2"                
                 Grid.Row="5" 
@@ -78,18 +76,18 @@
             <!--Button 4-->
             <Button 
                 x:Name="button4" 
-                Foreground="White" 
+                Foreground="LightGray" 
                 Background="Black" 
-                BorderBrush="Black" 
+                BorderBrush="Indigo" 
                 FontSize="25" Grid.Column="0" 
                 Grid.Row="4" 
                 Click="button4_Click">4</Button>
             <!--Button 5-->
             <Button 
                 x:Name="button5" 
-                Foreground="White" 
+                Foreground="LightGray" 
                 Background="Black" 
-                BorderBrush="Black" 
+                BorderBrush="Indigo" 
                 FontSize="25" 
                 Grid.Column="1" 
                 Grid.Row="4" 
@@ -97,9 +95,9 @@
             <!--Button 6-->
             <Button 
                 x:Name="button6" 
-                Foreground="White" 
+                Foreground="LightGray" 
                 Background="Black" 
-                BorderBrush="Black" 
+                BorderBrush="Indigo" 
                 FontSize="25" 
                 Grid.Column="2" 
                 Grid.Row="4" 
@@ -107,9 +105,9 @@
             <!--Button 7-->
             <Button 
                 x:Name="button7" 
-                Foreground="White" 
+                Foreground="LightGray" 
                 Background="Black" 
-                BorderBrush="Black" 
+                BorderBrush="Indigo" 
                 FontSize="25" 
                 Grid.Column="0" 
                 Grid.Row="3" 
@@ -117,9 +115,9 @@
             <!--Button 8-->
             <Button 
                 x:Name="button8" 
-                Foreground="White" 
+                Foreground="LightGray" 
                 Background="Black" 
-                BorderBrush="Black" 
+                BorderBrush="Indigo" 
                 FontSize="25" 
                 Grid.Column="1" 
                 Grid.Row="3" 
@@ -127,15 +125,15 @@
             <!--Button 9-->
             <Button 
                 x:Name="button9" 
-                Foreground="White" 
+                Foreground="LightGray" 
                 Background="Black" 
-                BorderBrush="Black" 
+                BorderBrush="Indigo" 
                 FontSize="25" 
                 Grid.Column="2" 
                 Grid.Row="3" 
-                Click="button9_Click">9</Button>            
+                Click="button9_Click">9</Button>
 
-            <!--Clear Buttons-->            
+            <!--Clear Buttons-->
             <!--Button C-->
             <Button 
                 x:Name="buttonClear" 
@@ -155,7 +153,7 @@
                 FontSize="25" 
                 Grid.Column="4" 
                 Grid.Row="2" 
-                Click="buttonBackspace_Click">⇐</Button>            
+                Click="buttonBackspace_Click">⇐</Button>
 
             <!--Math Buttons-->
             <!--Button =-->
@@ -269,38 +267,129 @@
                 Grid.Column="2"
                 Grid.Row="6" 
                 Click="buttonDeci_Click">.</Button>
-               
-            <!-- FUNCTIONS -->
-            <Button 
-                Content="(⨍)Functions  /  Trigonometry(📐)" 
-                Foreground="LightGray"
-                Background="Black" 
-                Grid.Column="0"
-                Grid.Row="1" 
-                Grid.ColumnSpan="5"
-                FontSize="20" 
-                VerticalAlignment="Bottom"
-                HorizontalAlignment="Stretch">
-                <Button.ContextMenu>
-                    <ContextMenu>
-                        <MenuItem x:Name="buttonAbsolute" Header="abs" />
-                        <MenuItem x:Name="buttonAcosine" Header="acos" />
-                        <MenuItem x:Name="buttonAsine" Header="asin" />
-                        <MenuItem x:Name="buttonAtangible" Header="atan" />
-                        <MenuItem x:Name="buttonCeiling" Header="ceiling" />
-                        <MenuItem x:Name="buttonCosine" Header="cos" />
-                        <MenuItem x:Name="buttonExponential" Header="exp" />
-                        <MenuItem x:Name="buttonFloor" Header="floor" />
-                        <MenuItem x:Name="buttonLog" Header="log" />
-                        <MenuItem x:Name="buttonMod" Header="mod" />
-                        <MenuItem x:Name="buttonTanginble" Header="tan" />
-                        <MenuItem x:Name="buttonSine" Header="sine" />
-                        <MenuItem x:Name="buttonSquare" Header="sqrt" />
-                        <MenuItem x:Name="buttonPower" Header="x^n" />
 
-                    </ContextMenu>
-                </Button.ContextMenu>
-            </Button>            
+
+            <!--<StackPanel Background="Green" Margin="10" VerticalAlignment="Bottom" Orientation="Vertical" AllowDrop="True" Grid.Column="2" Grid.Row="1">
+                <ComboBox>
+                    <ComboBoxItem>a</ComboBoxItem>
+                    <ComboBoxItem>b</ComboBoxItem>
+                </ComboBox>
+            </StackPanel>-->
+
+            <!-- FUNCTIONS -->
+            <!--Functions  /  Trigonometry(📐-->
+
+            <Label 
+                Content="Functions / Trigonometry"
+                Background="Transparent"
+                Foreground="ForestGreen"
+                Grid.Row="1"
+                Grid.ColumnSpan="5"
+                VerticalAlignment="Center"
+                FontSize="20"/>
+                <ComboBox
+                    IsDropDownOpen="True"
+                    Grid.Row="1"                    
+                    Grid.ColumnSpan="5"
+                    HorizontalAlignment="Stretch"
+                    VerticalAlignment="Bottom">
+                    <ComboBoxItem 
+                        x:Name="buttonAbsolute"
+                        Content="abs"
+                        Background="Black"
+                        Foreground="ForestGreen"
+                        FontSize="20"                        
+                        BorderBrush="Indigo"
+                        HorizontalAlignment="Stretch"
+                        VerticalAlignment="Stretch"
+                        Grid.Row="1"
+                        Grid.Column="0"></ComboBoxItem>
+                    <ComboBoxItem 
+                        x:Name="buttonAcosine"
+                        Content="acos" 
+                        Background="Black"
+                        Foreground="ForestGreen"
+                        FontSize="20"
+                        BorderBrush="Indigo"></ComboBoxItem>
+                    <ComboBoxItem 
+                        x:Name="buttonAsine"
+                        Content="asin" 
+                        Background="Black"
+                        Foreground="ForestGreen"
+                        FontSize="20"
+                        BorderBrush="Indigo"></ComboBoxItem>
+                    <ComboBoxItem 
+                        x:Name="buttonAtangible"
+                        Content="atan"
+                        Background="Black"
+                        Foreground="ForestGreen"
+                        FontSize="20"
+                        BorderBrush="Indigo"></ComboBoxItem>
+                    <ComboBoxItem
+                        x:Name="buttonCeiling"
+                        Content="ceiling" 
+                        Background="Black"
+                        Foreground="ForestGreen"
+                        FontSize="20"
+                        BorderBrush="Indigo"></ComboBoxItem>
+                    <ComboBoxItem 
+                        x:Name="buttonCosine"
+                        Content="cos" 
+                        Background="Black"
+                        Foreground="ForestGreen"
+                        FontSize="20"
+                        BorderBrush="Indigo"></ComboBoxItem>
+                    <ComboBoxItem
+                        x:Name="buttonExponential"
+                        Content="exp" 
+                        Background="Black"
+                        Foreground="ForestGreen"
+                        FontSize="20"
+                        BorderBrush="Indigo"></ComboBoxItem>
+                    <ComboBoxItem
+                        x:Name="buttonLog"
+                        Content="log" 
+                        Background="Black"
+                        Foreground="ForestGreen"
+                        FontSize="20"
+                        BorderBrush="Indigo"></ComboBoxItem>
+                    <ComboBoxItem 
+                        x:Name="buttonMod"
+                        Content="mod" 
+                        Background="Black"
+                        Foreground="ForestGreen"
+                        FontSize="20"
+                        BorderBrush="Indigo"></ComboBoxItem>
+                    <ComboBoxItem
+                        x:Name="buttonTanginble"
+                        Content="tan"
+                        Background="Black"
+                        Foreground="ForestGreen"
+                        FontSize="20"
+                        BorderBrush="Indigo"></ComboBoxItem>
+                    <ComboBoxItem
+                        x:Name="buttonSine"
+                        Content="sin"
+                        Background="Black"
+                        Foreground="ForestGreen"
+                        FontSize="20"
+                        BorderBrush="Indigo"></ComboBoxItem>
+                    <ComboBoxItem
+                        x:Name="buttonSquare"
+                        Content="sqrt"
+                        Background="Black"
+                        Foreground="ForestGreen"
+                        FontSize="20"
+                        BorderBrush="Indigo"></ComboBoxItem>
+                    <ComboBoxItem
+                        x:Name="buttonPower"
+                        Content="power"
+                        Background="Black"
+                        Foreground="ForestGreen"
+                        FontSize="20"
+                        BorderBrush="Indigo"></ComboBoxItem>
+                </ComboBox>            
+            
 
             <!--Function Buttons (⨍)-->
             <!--<Popup Name="popup" IsOpen="True" Grid.Column="4" Grid.Row="5" HorizontalAlignment="Center" VerticalAlignment="Center">
@@ -308,7 +397,7 @@
                     <TextBlock Name="⨍" Background="Aqua">asd</TextBlock>
                     <Button Content ="⨍"></Button>
                 </StackPanel>
-            </Popup>-->         
+            </Popup>-->
 
 
             <!--History Button-->
