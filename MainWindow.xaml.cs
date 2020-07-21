@@ -121,6 +121,8 @@ namespace Calculator
             textDisplay.Text = textDisplay.Text + "^";
         }
 
+       
+
 
         // NO OPERAND MATHS //
         private void buttonPI_Click(object sender, RoutedEventArgs e)
