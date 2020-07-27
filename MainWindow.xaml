@@ -42,6 +42,7 @@
 				BorderBrush="Black"
 				IsReadOnly="True"
 				TextAlignment="Left"
+                TextWrapping="Wrap"
 				VerticalAlignment="Center"
 				FontSize="40"
 				Grid.Row="0"
