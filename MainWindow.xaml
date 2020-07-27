@@ -7,8 +7,7 @@
         mc:Ignorable="d"
         Title="Calculator##" Height="700" Width="400">
     <Border Background="Black">
-
-
+		
         <Grid>
             <Grid.ColumnDefinitions>
                 <ColumnDefinition />
@@ -27,9 +26,28 @@
                 <RowDefinition />
                 <RowDefinition />
             </Grid.RowDefinitions>
-
-            <!--Display Box-->
-            <TextBox x:Name="textDisplay" Foreground="White" Background="Black" BorderBrush="Black" IsReadOnly="True" TextAlignment="Left" VerticalAlignment="Center" FontSize="40" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="5" Grid.RowSpan="2"></TextBox>
+			
+			
+			<!-- Top buttons --><!--
+			<Label Content="✕" HorizontalAlignment="Right" VerticalAlignment="Top" Height="22" Width="25" Foreground="{StaticResource BUTTON_TOPBUTTON_FOREGROUND}" Padding="0,0,1,0" Cursor="Hand" MouseDown="OnCloseWindowButtonClick" FontSize="14" Template="{DynamicResource LabelButtonType}" OverridesDefaultStyle="True" Style="{Binding Mode=OneWay, Source={StaticResource LabelButtonType}}" VerticalContentAlignment="Center" Background="{StaticResource BUTTON_CLOSEWINDOW_BACKGROUND}" HorizontalContentAlignment="Center" />
+			
+			<Label Content="__" Margin="0,-7,25,0" Foreground="{StaticResource BUTTON_TOPBUTTON_FOREGROUND}" Padding="0" Cursor="Hand" FontSize="18" Background="{StaticResource BUTTON_TOPBUTTON_BACKGROUND}" MouseDown="OnMinimizeButtonClick" Template="{DynamicResource LabelButtonType}" HorizontalContentAlignment="Center" BorderThickness="0" VerticalContentAlignment="Center" HorizontalAlignment="Right" Width="28" Height="29" VerticalAlignment="Top"/>-->
+			
+            
+			<!--Display Box-->
+            <TextBox 
+				x:Name="textDisplay"
+				Foreground="White"
+				Background="Black"
+				BorderBrush="Black"
+				IsReadOnly="True"
+				TextAlignment="Left"
+				VerticalAlignment="Center"
+				FontSize="40"
+				Grid.Row="0"
+				Grid.Column="0"
+				Grid.ColumnSpan="5"
+				Grid.RowSpan="2"></TextBox>
 
             <!--Number Buttons-->
             <!--Button 0-->
@@ -296,7 +314,14 @@
 
 
 
-            <!--<StackPanel Background="Green" Margin="10" VerticalAlignment="Bottom" Orientation="Vertical" AllowDrop="True" Grid.Column="2" Grid.Row="1">
+            <!--<StackPanel 
+			    Background="Green"
+			    Margin="10"
+			    VerticalAlignment="Bottom"
+			    Orientation="Vertical"
+			    AllowDrop="True"
+			    Grid.Column="2"
+			    Grid.Row="1">
                 <ComboBox>
                     <ComboBoxItem>a</ComboBoxItem>
                     <ComboBoxItem>b</ComboBoxItem>
@@ -333,73 +358,73 @@
                         HorizontalAlignment="Center"/>
                 <Button x:Name="buttonAcosine"
                         Content="acos" 
-                        Background="Black"
+                        Background="Transparent"
                         Foreground="ForestGreen"
                         BorderBrush="Transparent"
                         FontSize="20"/>
                 <Button x:Name="buttonAsine"
-                        Content="asin" 
-                        Background="Black"
+                        Content="asin"
+                        Background="Transparent"
                         Foreground="ForestGreen"
                         BorderBrush="Transparent"                                           
                         FontSize="20"/>
                 <Button x:Name="buttonAtangible"
                         Content="atan"
-                        Background="Black"
+                        Background="Transparent"
                         Foreground="ForestGreen"
                         BorderBrush="Transparent"
                         FontSize="20"/>
                 <Button x:Name="buttonCeiling"
-                        Content="ceiling" 
-                        Background="Black"
+                        Content="ceiling"
+                        Background="Transparent"
                         Foreground="ForestGreen"
                         BorderBrush="Transparent"
                         FontSize="20"/>
                 <Button x:Name="buttonCosine"
-                        Content="cos" 
-                        Background="Black"
+                        Content="cos"
+                        Background="Transparent"
                         Foreground="ForestGreen"
                         BorderBrush="Transparent"
                         FontSize="20"/>
                 <Button x:Name="buttonExponential"
-                        Content="exp" 
-                        Background="Black"
+                        Content="exp"
+                        Background="Transparent"
                         Foreground="ForestGreen"
                         BorderBrush="Transparent"
                         FontSize="20"/>
                 <Button x:Name="buttonLog"
-                        Content="log" 
-                        Background="Black"
+                        Content="log"
+                        Background="Transparent"
                         Foreground="ForestGreen"
                         BorderBrush="Transparent"
                         FontSize="20"/>
                 <Button x:Name="buttonMod"
-                        Content="mod" 
-                        Background="Black"
+                        Content="mod"
+                        Background="Transparent"
                         Foreground="ForestGreen"
                         BorderBrush="Transparent"
                         FontSize="20"/>
                 <Button x:Name="buttonTanginble"
                         Content="tan"
-                        Background="Black"
+                        Background="Transparent"
                         Foreground="ForestGreen"
                         BorderBrush="Transparent"
                         FontSize="20"/>
                 <Button x:Name="buttonSine"
                         Content="sin"
-                        Background="Black"
+                        Background="Transparent"
                         Foreground="ForestGreen"
                         BorderBrush="Transparent"
                         FontSize="20"/>
                 <Button x:Name="buttonSquare"
                         Content="sqrt"
-                        Background="Black"
+                        Background="Transparent"
                         Foreground="ForestGreen"
                         BorderBrush="Transparent"
                         FontSize="20"/>
                 <Button x:Name="buttonPower"
                         Content="power"
-                        Background="Black"
+                        Background="Transparent"
                         Foreground="ForestGreen"
                         BorderBrush="Transparent"
                         FontSize="20"/>
